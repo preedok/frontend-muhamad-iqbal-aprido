@@ -62,7 +62,17 @@ const useStore = (() => {
   const fetchPorts = async (countryId) => {
     try {
       setState({ loading: { ...state.loading, ports: true }, error: null });
-      const response = await fetch(`${api}/pelabuhans/${countryId}`);
+      
+      const filter = {
+        where: { id_negara: parseInt(countryId) },
+        fields: {
+          id_pelabuhan: true,
+          nama_pelabuhan: true,
+          id_negara: true
+        }
+      };
+      
+      const response = await fetch(`${api}/pelabuhans?filter=${JSON.stringify(filter)}`);
       if (!response.ok) throw new Error('Failed to fetch ports');
       const data = await response.json();
       const ports = Array.isArray(data) ? data : [data];
@@ -89,13 +99,24 @@ const useStore = (() => {
       });
     }
   };
-  
-  
 
   const fetchProducts = async (portId) => {
     try {
       setState({ loading: { ...state.loading, products: true }, error: null });
-      const response = await fetch(`${api}/barangs/${portId}`);
+      
+      const filter = {
+        where: { id_pelabuhan: parseInt(portId) },
+        fields: {
+          id_barang: true,
+          nama_barang: true,
+          harga: true,
+          diskon: true,
+          description: true,
+          id_pelabuhan: true
+        }
+      };
+      
+      const response = await fetch(`${api}/barangs?filter=${JSON.stringify(filter)}`);
       if (!response.ok) throw new Error('Failed to fetch products');
       const data = await response.json();
       const products = Array.isArray(data) ? data : [data];
@@ -127,7 +148,6 @@ const useStore = (() => {
       });
     }
   };
-  
 
   const selectCountry = (countryId) => {
     setState({
@@ -193,6 +213,7 @@ const useStore = (() => {
       error: null
     });
   };
+
   useStore.actions = {
     fetchCountries,
     selectCountry,
