@@ -1,4 +1,4 @@
-# 🌐 Frontend Developer Test - Sistem Ekspor-Impor
+# 🌐 Frontend Developer Test - Sistem Ekspor-Impor Pelabuhan Pelindo
 
 Aplikasi frontend interaktif untuk manajemen produk ekspor-impor Pelabuhan. Dibangun dengan ReactJS, Zustand, TailwindCSS (Shadcn UI), dan Vite. Data diambil dari REST API LoopBack.
 
