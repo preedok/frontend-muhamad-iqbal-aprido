@@ -4,6 +4,8 @@ Tentu! Berikut versi README yang lebih modern, rapi, dan dengan gaya kekinian, y
 
 # 🌐 Frontend Developer Test — Sistem Ekspor-Impor Pelabuhan Pelindo
 
+![Anime berjalan](https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif)
+
 Aplikasi frontend interaktif untuk memudahkan manajemen produk ekspor-impor di Pelabuhan Pelindo, dibangun dengan ReactJS, Zustand, TailwindCSS (Shadcn UI), dan Vite. Data berasal dari REST API LoopBack.
 
 ---
