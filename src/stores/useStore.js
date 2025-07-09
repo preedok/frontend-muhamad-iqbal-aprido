@@ -104,6 +104,49 @@ const useStore = (() => {
     }
   };
 
+  const fetchProductDetailById = async (id_barang) => {
+    try {
+      setState({ loading: { ...state.loading, products: true }, error: null });
+  
+      const filter = {
+        where: { id_barang: parseInt(id_barang) },
+        fields: {
+          id_barang: true,
+          nama_barang: true,
+          harga: true,
+          diskon: true,
+          description: true,
+          id_pelabuhan: true
+        }
+      };
+  
+      const res = await fetch(`${api}/barangs?filter=${JSON.stringify(filter)}`);
+      if (!res.ok) throw new Error();
+  
+      const data = await res.json();
+      const product = Array.isArray(data) ? data[0] : data;
+  
+      if (product) {
+        const total = product.harga * (1 - product.diskon / 100);
+        setState({
+          selectedProduct: product.id_barang.toString(),
+          discount: product.diskon,
+          price: product.harga,
+          total,
+          productDescription: product.description,
+          step: 4
+        });
+      }
+  
+      setState({ loading: { ...state.loading, products: false } });
+    } catch {
+      setState({
+        error: 'Gagal memuat detail barang.',
+        loading: { ...state.loading, products: false }
+      });
+    }
+  };
+  
   const selectCountry = (id) => {
     setState({ selectedCountry: id, selectedPort: '', selectedProduct: '', ports: [], discount: 0, price: 0, total: 0, productDescription: '', step: 1 });
     if (id) fetchPorts(id);
@@ -126,7 +169,7 @@ const useStore = (() => {
     setState({ selectedCountry: '', selectedPort: '', selectedProduct: '', ports: [], products: {}, discount: 0, price: 0, total: 0, productDescription: '', step: 1, error: null });
   };
 
-  useStore.actions = { fetchCountries, selectCountry, selectPort, selectProduct, resetForm };
+  useStore.actions = { fetchCountries, selectCountry, selectPort, selectProduct, fetchProductDetailById, resetForm };
   return useStore;
 })();
 

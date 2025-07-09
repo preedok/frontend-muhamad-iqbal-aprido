@@ -16,8 +16,6 @@ import useStore from '../../stores/useStore';
 
 export const ProductSelector = () => {
   const { products, selectedProduct, selectedPort, loading } = useStore();
-  const { selectProduct } = useStore.actions;
-
   const productList = selectedPort ? products[selectedPort] || [] : [];
 
   const options = useMemo(() => productList.map(product => ({
@@ -30,11 +28,6 @@ export const ProductSelector = () => {
     p => p.id_barang.toString() === selectedProduct
   );
 
-  const handleChange = (_event, newValue) => {
-    if (newValue) {
-      selectProduct(newValue.value);
-    }
-  };
 
   const formatPrice = (price) => {
     return new Intl.NumberFormat('id-ID', {
@@ -45,6 +38,13 @@ export const ProductSelector = () => {
     }).format(price);
   };
 
+  const { fetchProductDetailById } = useStore.actions;
+
+const handleChange = async (_event, newValue) => {
+  if (newValue) {
+    await fetchProductDetailById(newValue.value);
+  }
+};
   if (!selectedPort) return null;
 
   return (
