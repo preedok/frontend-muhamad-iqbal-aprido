@@ -22,7 +22,6 @@ Aplikasi frontend interaktif untuk manajemen produk ekspor-impor Pelabuhan. Diba
 - **Shadcn UI** — UI components modern berbasis Radix UI  
 - **TailwindCSS** — Utility-first CSS framework  
 - **Vite** — Build tool dan dev server cepat  
-- **LoopBack API** — Backend REST API eksternal  
 
 ---
 
