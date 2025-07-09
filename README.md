@@ -47,6 +47,7 @@ yarn install
 
 ## 📁 Clone repository
 git clone https://github.com/preedok/frontend-muhamad-iqbal-aprido
+#
 cd frontend-muhamad-iqbal-aprido
 
 ## 📁 Jalankan aplikasi dalam mode development
