@@ -39,7 +39,7 @@ const App = () => {
         )}
 
         <div className={`grid gap-6 md:gap-8 ${isProductSelected ? 'md:grid-cols-2' : 'grid-cols-1'}`}>
-  <div className={`${isProductSelected ? '' : 'max-w-2xl mx-auto'} space-y-6`}>
+  <div className={`space-y-6`}>
     <CountrySelector />
     <PortSelector />
     <ProductSelector />
