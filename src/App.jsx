@@ -22,7 +22,7 @@ const App = () => {
       <div className="relative z-10 container max-w-screen-xl mx-auto px-4 py-8">
         <div className="text-center mb-12">
           <h1 className="text-2xl sm:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
-            SOAL TEST FRONTEND DEVELOPER
+            FRONTEND-MUHAMAD-IQBAL-APRIDO
           </h1>
           <p className="text-gray-600 text-base sm:text-lg">
             Sistem manajemen produk ekspor-impor yang modern dan interaktif
