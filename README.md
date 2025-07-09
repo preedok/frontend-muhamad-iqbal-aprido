@@ -1,59 +1,96 @@
-# 🌐 Frontend Developer Test - Sistem Ekspor-Impor Pelabuhan Pelindo
+Tentu! Berikut versi README yang lebih modern, rapi, dan dengan gaya kekinian, yang tetap informatif dan mudah dipahami:
 
-Aplikasi frontend interaktif untuk manajemen produk ekspor-impor Pelabuhan. Dibangun dengan ReactJS, Zustand, TailwindCSS (Shadcn UI), dan Vite. Data diambil dari REST API LoopBack.
+---
+
+# 🌐 Frontend Developer Test — Sistem Ekspor-Impor Pelabuhan Pelindo
+
+Aplikasi frontend interaktif untuk memudahkan manajemen produk ekspor-impor di Pelabuhan Pelindo, dibangun dengan ReactJS, Zustand, TailwindCSS (Shadcn UI), dan Vite. Data berasal dari REST API LoopBack.
 
 ---
 
 ## 🚀 Fitur Utama
 
-- Pemilihan bertahap: Negara → Pelabuhan → Produk  
-- Otomatis memilih pelabuhan atau produk jika hanya ada satu pilihan  
-- Menampilkan detail produk secara otomatis saat produk dipilih  
-- Hitung harga total dengan diskon secara real-time  
-- Indikator langkah (step) interaktif untuk panduan proses  
-- Manajemen state global menggunakan Zustand yang ringan dan efisien  
+* **Seleksi Bertahap:** Pilih Negara → Pelabuhan → Produk secara berurutan
+* **Auto Select:** Otomatis memilih pelabuhan atau produk jika hanya ada satu opsi
+* **Detail Produk:** Menampilkan detail produk secara real-time saat dipilih
+* **Perhitungan Harga:** Hitung total harga dan diskon secara dinamis
+* **Step Indicator:** Panduan langkah interaktif yang memudahkan pengguna
+* **State Management:** Zustand untuk state global yang ringan & efisien
 
 ---
 
-## 🧱 Teknologi
+## 🛠 Teknologi yang Digunakan
 
-- **ReactJS** — UI library  
-- **Zustand** — State management global  
-- **Shadcn UI** — UI components modern berbasis Radix UI  
-- **TailwindCSS** — Utility-first CSS framework  
-- **Vite** — Build tool dan dev server cepat  
+| Teknologi   | Fungsi                      |
+| ----------- | --------------------------- |
+| ReactJS     | UI Library                  |
+| Zustand     | Global State Management     |
+| Shadcn UI   | Komponen UI modern (Radix)  |
+| TailwindCSS | Utility-first CSS Framework |
+| Vite        | Build tool & dev server     |
 
 ---
 
-## 📁 Struktur Proyek
+## 📂 Struktur Proyek
+
+```
 src/
 ├── components/
-│ ├── common/ # Komponen StepIndicator, dll
-│ ├── selectors/ # Komponen pemilih Negara, Pelabuhan, Produk
-│ └── details/ # Komponen detail produk
-├── stores/ # Zustand store global
-├── service/ # Konfigurasi API
-├── App.jsx # Root component aplikasi
-├── main.jsx # Entry point aplikasi
-└── index.css # Styling global Tailwind
+│   ├── common/       # Komponen seperti StepIndicator, dll
+│   ├── selectors/    # Komponen pemilih Negara, Pelabuhan, Produk
+│   └── details/      # Komponen detail produk
+├── stores/           # Zustand global store
+├── service/          # API configuration
+├── App.jsx           # Root component aplikasi
+├── main.jsx          # Entry point aplikasi
+└── index.css         # Styling global Tailwind
+```
 
-## 📁 .env
+---
+
+## ⚙️ Konfigurasi Environment
+
+Buat file `.env` di root project dan isi dengan:
+
+```
 VITE_API_BASE_URL=http://202.157.176.100:3001
+```
 
-## 📁 Install dependencies
+---
+
+## 🚀 Cara Instal & Menjalankan
+
+```bash
+# Clone repository
+git clone https://github.com/preedok/frontend-muhamad-iqbal-aprido
+cd frontend-muhamad-iqbal-aprido
+
+# Install dependencies
 npm install
 # atau
 yarn install
 
-## 📁 Clone repository
-git clone https://github.com/preedok/frontend-muhamad-iqbal-aprido
-#
-cd frontend-muhamad-iqbal-aprido
-
-## 📁 Jalankan aplikasi dalam mode development
+# Jalankan aplikasi dalam mode development
 npm run dev
 # atau
 yarn dev
+```
 
-## 📁  Buka aplikasi di browser
+---
+
+## 🌐 Akses Aplikasi
+
+Buka di browser:
+
+```
 http://localhost:5173
+```
+
+---
+
+## 📌 Catatan
+
+* Pastikan API backend sudah berjalan di alamat yang terkonfigurasi di `.env`
+* Gunakan browser modern untuk pengalaman terbaik
+
+---
