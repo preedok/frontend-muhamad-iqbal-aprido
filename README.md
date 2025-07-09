@@ -39,3 +39,20 @@ src/
 
 ## 📁 .env
 VITE_API_BASE_URL=http://202.157.176.100:3001
+
+## 📁 Install dependencies
+npm install
+# atau
+yarn install
+
+## 📁 Clone repository
+git clone https://github.com/preedok/frontend-muhamad-iqbal-aprido
+cd frontend-muhamad-iqbal-aprido
+
+## 📁 Jalankan aplikasi dalam mode development
+npm run dev
+# atau
+yarn dev
+
+## 📁  Buka aplikasi di browser
+http://localhost:5173
