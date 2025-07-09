@@ -1,4 +1,3 @@
-
 import { useMemo } from 'react';
 import {
   Card,
@@ -19,13 +18,15 @@ export const ProductSelector = () => {
   const { products, selectedProduct, selectedPort, loading } = useStore();
   const { selectProduct } = useStore.actions;
 
-  const options = useMemo(() => products.map(product => ({
+  const productList = selectedPort ? products[selectedPort] || [] : [];
+
+  const options = useMemo(() => productList.map(product => ({
     ...product,
     label: product.nama_barang,
     value: product.id_barang.toString()
-  })), [products]);
+  })), [productList]);
 
-  const selectedProductData = products.find(
+  const selectedProductData = productList.find(
     p => p.id_barang.toString() === selectedProduct
   );
 
