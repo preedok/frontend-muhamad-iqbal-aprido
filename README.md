@@ -37,3 +37,6 @@ src/
 ├── App.jsx # Root component aplikasi
 ├── main.jsx # Entry point aplikasi
 └── index.css # Styling global Tailwind
+
+## 📁 .env
+VITE_API_BASE_URL=http://202.157.176.100:3001
