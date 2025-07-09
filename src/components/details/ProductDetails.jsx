@@ -74,7 +74,8 @@ export const ProductDetails = () => {
   
             <div className="space-y-2">
               <Label className="text-sm font-medium flex items-center gap-2">
-                <DollarSign className="w-4 h-4" />
+                {/* <DollarSign className="w-4 h-4" /> */}
+                <span className="text-sm font-medium">Rp</span>
                 HARGA ASLI
               </Label>
               <Input
